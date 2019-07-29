@@ -1,0 +1,94 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        numberToWords(123);
+        numberToWords(456);
+        numberToWords(789);
+        System.out.print("and ");
+        numberToWords(1);
+        System.out.print(" more it makes Ten");
+
+
+    }
+    public static void numberToWords(int number){
+        if(number < 0){
+            System.out.println("Invalid Value");
+        }
+        int unit;
+        unit = number%10;
+        number= number/10;
+        String answer = "some";
+        switch (unit){
+            case 0:
+                answer = "Zero";
+                break;
+            case 1:
+                answer = "One";
+                break;
+            case 2:
+                answer = "Two";
+                break;
+            case 3:
+                answer = "Three";
+                break;
+            case 4:
+                answer = "Four";
+                break;
+            case 5:
+                answer = "Five";
+                break;
+            case 6:
+                answer = "Six";
+                break;
+            case 7:
+                answer = "Seven";
+                break;
+            case 8:
+                answer = "Eight";
+                break;
+            case 9:
+                answer = "Nine";
+                break;
+        }
+
+        while (number > 0){
+            unit = number%10;
+            switch (unit){
+                case 0:
+                    answer = "Zero" + " " + answer;
+                    break;
+                case 1:
+                    answer = "One" + " " + answer;
+                    break;
+                case 2:
+                    answer = "Two" + " " + answer;
+                    break;
+                case 3:
+                    answer = "Three" + " " + answer;
+                    break;
+                case 4:
+                    answer = "Four" + " " + answer;
+                    break;
+                case 5:
+                    answer = "Five" + " " + answer;
+                    break;
+                case 6:
+                    answer = "Six" + " " + answer;
+                    break;
+                case 7:
+                    answer = "Seven" + " " + answer;
+                    break;
+                case 8:
+                    answer = "Eight" + " " + answer;
+                    break;
+                case 9:
+                    answer = "Nine" + " " + answer;
+            }
+            number = number/10;
+        }
+        System.out.println(answer);
+    }
+
+}
