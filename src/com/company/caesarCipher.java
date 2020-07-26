@@ -67,7 +67,7 @@ public class caesarCipher {
         return alphabetValues.get(value);
     }
 
-    public static HashMap<Character, Character> caesarCipher(char firstLetter, char secondLetter){
+    private static HashMap<Character, Character> caesarCipher(char firstLetter, char secondLetter){
         HashMap<Character, Character> caesarCipher = new HashMap<>();
         firstLetter = Character.toLowerCase(firstLetter);
         secondLetter = Character.toLowerCase(secondLetter);
@@ -99,7 +99,7 @@ public class caesarCipher {
             return indexLetter;
     }
 
-    public static void decodeWithCaesarCipher(String word, char firstLetter, char secondLetter){
+    public static String decodeWithCaesarCipher(String word, char firstLetter, char secondLetter){
         HashMap<Character, Character> currentCipher = caesarCipher(firstLetter, secondLetter);
         word = word.toLowerCase();
         String decodedMessage = "";
@@ -110,6 +110,6 @@ public class caesarCipher {
                 decodedMessage += currentCipher.get(word.charAt(i));
         }
         decodedMessage = decodedMessage.toUpperCase();
-        System.out.println("the secret message was: " + decodedMessage);
+        return ("the secret message was: " + decodedMessage);
     }
 }
